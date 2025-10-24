@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using YetAnotherCartApi.Auth;
 using YetAnotherCartApi.Auth.Context;
 using YetAnotherCartApi.Cart.Context;
+using YetAnotherCartApi.Carts.Context;
+using YetAnotherCartApi.Orders.Context;
 using YetAnotherCartApi.Widgets.Context;
 
 namespace YetAnotherCartApi
@@ -22,6 +24,8 @@ namespace YetAnotherCartApi
             builder.Services.AddDbContext<CartContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Debug")));
             builder.Services.AddDbContext<WidgetContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("Debug")));
+            builder.Services.AddDbContext<OrderContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Debug")));
 
 

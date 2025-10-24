@@ -19,6 +19,8 @@ namespace YetAnotherCartApi.Widgets.Entity
         [Column("price")]
         public int Price { get; set; }
         [Column("uid")]
-        public Guid Uid { get; set; }  
+        public Guid Uid { get; set; }
+        [Column("user_id")]
+        public Guid UserId { get; set; }
     }
 }

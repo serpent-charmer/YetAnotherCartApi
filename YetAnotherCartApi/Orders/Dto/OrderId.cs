@@ -1,6 +1,6 @@
-﻿namespace YetAnotherCartApi.Carts.Dto
+﻿namespace YetAnotherCartApi.Orders.Dto
 {
-    public class Widget
+    public class OrderId
     {
         public Guid Uid { get => Guid.Parse(Id); }
         public string Id { get; set; }

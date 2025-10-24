@@ -8,6 +8,7 @@ namespace YetAnotherCartApi.Auth.Context
     public class UserContext : DbContext
     {
         public DbSet<ShopUser> Users { get; set; }
+        public DbSet<UserCapability> Capabilities { get; set; }
 
         public UserContext(DbContextOptions<UserContext> contextOptions) : base(contextOptions)
         {
