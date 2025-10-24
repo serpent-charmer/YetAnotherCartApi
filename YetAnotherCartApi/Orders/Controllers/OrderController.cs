@@ -62,8 +62,9 @@ namespace YetAnotherCartApi.Orders.Controllers
             {
                 return BadRequest();
             }
-            
-            if(order.ArriveAt != null && orderToChange.Status != "arrived")
+
+            var warehouse = orderCtx.Warehouses.FirstOrDefaultAsync(w => w.Uid == order.ArriveAt);
+            if (order.ArriveAt != null && warehouse != null && orderToChange.Status != "arrived")
             {
                 orderToChange.ArriveAt = order.ArriveAt.Value;
             }
