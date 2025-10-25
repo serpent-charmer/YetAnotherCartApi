@@ -103,6 +103,11 @@ namespace YetAnotherCartApi.Orders.Controllers
                 return BadRequest();
             }
 
+            var invoice = await orderCtx.Invoices.FirstOrDefaultAsync(i => i.OrderId == order.Uid);
+            if (invoice != null)
+            {
+                return BadRequest();
+            }
             await orderCtx.Invoices.AddAsync(new Entity.Invoice
             {
                 OrderId = invoiceInfo.OrderId,
